@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tools of Titans українською - Купити книгу</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        h1, h2 {
+            color: #2c3e50;
+        }
+        .book-info, .order-section, .reviews {
+            margin-bottom: 40px;
+        }
+        .cta-button {
+            display: inline-block;
+            background-color: #3498db;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        input, select {
+            margin-bottom: 10px;
+            padding: 5px;
+        }
+        .hidden {
+            display: none;
+        }
+        .book-cover {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .book-cover img {
+            max-width: 100%;
+            height: auto;
+            max-height: 400px;
+        }
+        .review {
+            background-color: #f9f9f9;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Tools of Titans українською</h1>
+        <p>Бестселер Тіма Ферріса тепер доступний українською мовою!</p>
+    </header>
+
+    <section class="book-cover">
+        <img src="https://static.yakaboo.ua/media/catalog/product/9/7/9781785041273.jpg" alt="Обкладинка книги Tools of Titans">
+    </section>
+
+    <section class="book-info">
+        <h2>Про книгу</h2>
+        <p>"Tools of Titans" - це унікальна збірка мудрості та практичних порад від найуспішніших людей світу, ретельно зібрана відомим автором та підприємцем Тімом Феррісом. Ця книга - результат більш ніж 200 інтерв'ю з світовими лідерами, знаменитостями та видатними професіоналами у різних галузях. На сторінках "Tools of Titans" ви знайдете безцінні інсайти про продуктивність, здоров'я, багатство та мудрість життя. Кожен розділ наповнений конкретними тактиками та стратегіями, які ви можете одразу застосувати у своєму житті. Від ранкових ритуалів мільярдерів до секретів креативності відомих артистів - ця книга пропонує інструменти для досягнення успіху в будь-якій сфері. Тепер, завдяки українському перекладу, ці потужні знання стають доступними для україномовних читачів, відкриваючи нові горизонти для особистого та професійного зростання.</p>
+        <a href="#" id="orderButton" class="cta-button">Замовити зараз</a>
+    </section>
+
+    <section id="orderSection" class="order-section hidden">
+        <h2>Замовити книгу</h2>
+        <form id="orderForm">
+            <input type="text" name="name" placeholder="Ваше ім'я" required>
+            <input type="email" name="email" placeholder="Ваш email" required>
+            <input type="tel" name="phone" placeholder="Ваш телефон" required>
+            <button type="button" id="nextButton" class="cta-button">Далі</button>
+        </form>
+    </section>
+
+    <section id="deliverySection" class="order-section hidden">
+        <h2>Доставка</h2>
+        <form id="deliveryForm">
+            <select name="delivery" required>
+                <option value="">Оберіть спосіб доставки</option>
+                <option value="nova_poshta">Нова Пошта</option>
+            </select>
+            <input type="text" name="address" placeholder="Адреса або номер відділення Нової Пошти" required>
+            <button type="button" id="paymentButton" class="cta-button">Перейти до оплати</button>
+        </form>
+    </section>
+
+    <section id="paymentSection" class="order-section hidden">
+        <h2>Оплата</h2>
+        <p>Оплата здійснюється через надійну платіжну систему Monopay.</p>
+        <button type="button" id="payButton" class="cta-button">Оплатити</button>
+    </section>
+
+    <section class="reviews">
+        <h2>Відгуки читачів</h2>
+        <div class="review">
+            <p>"Ця книга змінила мій підхід до роботи та життя. Кожна сторінка наповнена цінними порадами."</p>
+            <p><strong>- Олена Петренко, підприємець</strong></p>
+        </div>
+        <div class="review">
+            <p>"Неймовірно корисний ресурс. Я застосував кілька порад з книги і вже бачу результати."</p>
+            <p><strong>- Андрій Ковальчук, маркетолог</strong></p>
+        </div>
+        <div class="review">
+            <p>"Tools of Titans" - це скарбниця мудрості. Обов'язкова до прочитання для всіх, хто прагне розвитку."</p>
+            <p><strong>- Марія Іваненко, коуч з особистого розвитку</strong></p>
+        </div>
+    </section>
+
+    <script>
+        document.getElementById('orderButton').addEventListener('click', function(e) {
+            e.preventDefault();
+            document.getElementById('orderSection').classList.remove('hidden');
+            this.classList.add('hidden');
+        });
+
+        document.getElementById('nextButton').addEventListener('click', function() {
+            document.getElementById('orderSection').classList.add('hidden');
+            document.getElementById('deliverySection').classList.remove('hidden');
+        });
+
+        document.getElementById('paymentButton').addEventListener('click', function() {
+            document.getElementById('deliverySection').classList.add('hidden');
+            document.getElementById('paymentSection').classList.remove('hidden');
+        });
+
+        document.getElementById('payButton').addEventListener('click', function() {
+            // Тут буде код для інтеграції з Monopay
+            alert('Дякуємо за замовлення! Ми зв\'яжемося з вами найближчим часом.');
+        });
+    </script>
+</body>
+</html>
