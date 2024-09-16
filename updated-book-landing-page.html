@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tools of Titans українською - Купити книгу</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f0f0f0;
+        }
+        .container {
+            display: flex;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        .left-column {
+            flex: 1;
+            margin-right: 40px;
+        }
+        .right-column {
+            flex: 1;
+        }
+        .book-cover {
+            width: 100%;
+            max-width: 400px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .thumbnail-container {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .thumbnail {
+            width: 60px;
+            height: 80px;
+            object-fit: cover;
+            cursor: pointer;
+            opacity: 0.6;
+            transition: opacity 0.3s ease;
+            border-radius: 5px;
+        }
+        .thumbnail:hover, .thumbnail.active {
+            opacity: 1;
+        }
+        .quote {
+            font-style: italic;
+            margin-bottom: 20px;
+            font-size: 18px;
+            color: #555;
+        }
+        h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: #222;
+        }
+        p {
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+        .order-button {
+            display: inline-block;
+            background-color: #f7a046;
+            color: white;
+            padding: 12px 24px;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 30px;
+            transition: background-color 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        .order-button:hover {
+            background-color: #e8903a;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="left-column">
+            <img src="https://static.yakaboo.ua/media/catalog/product/9/7/9781785041273.jpg" alt="Tools of Titans cover" class="book-cover" id="mainCover">
+            <div class="thumbnail-container">
+                <img src="https://static.yakaboo.ua/media/catalog/product/9/7/9781785041273.jpg" alt="Cover 1" class="thumbnail active" onclick="changeImage(this.src)">
+                <img src="/api/placeholder/60/80" alt="Cover 2" class="thumbnail" onclick="changeImage(this.src)">
+                <img src="/api/placeholder/60/80" alt="Cover 3" class="thumbnail" onclick="changeImage(this.src)">
+                <img src="/api/placeholder/60/80" alt="Cover 4" class="thumbnail" onclick="changeImage(this.src)">
+                <img src="/api/placeholder/60/80" alt="Cover 5" class="thumbnail" onclick="changeImage(this.src)">
+            </div>
+            <div class="quote">"Ця книга - скарбниця мудрості та практичних порад від найуспішніших людей світу."</div>
+            <div class="quote">"Кожна сторінка наповнена цінними інсайтами, які можна одразу застосувати у житті."</div>
+        </div>
+        <div class="right-column">
+            <h1>Tools of Titans українською</h1>
+            <p>
+                "Tools of Titans" - це унікальна збірка мудрості та практичних порад від найуспішніших людей світу, ретельно зібрана відомим автором та підприємцем Тімом Феррісом. Ця книга - результат більш ніж 200 інтерв'ю з світовими лідерами, знаменитостями та видатними професіоналами у різних галузях.
+            </p>
+            <p>
+                На сторінках "Tools of Titans" ви знайдете безцінні інсайти про продуктивність, здоров'я, багатство та мудрість життя. Кожен розділ наповнений конкретними тактиками та стратегіями, які ви можете одразу застосувати у своєму житті.
+            </p>
+            <p>
+                Від ранкових ритуалів мільярдерів до секретів креативності відомих артистів - ця книга пропонує інструменти для досягнення успіху в будь-якій сфері. Тепер, завдяки українському перекладу, ці потужні знання стають доступними для україномовних читачів, відкриваючи нові горизонти для особистого та професійного зростання.
+            </p>
+            <button class="order-button">Замовити</button>
+        </div>
+    </div>
+
+    <script>
+        function changeImage(src) {
+            document.getElementById('mainCover').src = src;
+            document.querySelectorAll('.thumbnail').forEach(thumb => {
+                thumb.classList.remove('active');
+                if (thumb.src === src) {
+                    thumb.classList.add('active');
+                }
+            });
+        }
+    </script>
+</body>
+</html>
